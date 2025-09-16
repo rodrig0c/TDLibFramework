@@ -12,12 +12,14 @@ let package = Package(
         .watchOS(.v4),
         .tvOS(.v12), // Synced with iOS, but actually v9
     ],
-    products: [
-        .library(
-            name: "TDLibFramework",
-            targets: ["TDLibFrameworkWrapper"]
-        )
-    ],
+   products: [
+    .library(
+        name: "TDLibFramework",
+        type: .dynamic,     // <<< adicionado
+        targets: ["TDLibFrameworkWrapper"]
+    )
+],
+
     dependencies: [],
     targets: [
         .target(
